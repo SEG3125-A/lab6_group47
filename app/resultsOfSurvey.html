@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Survey Responses</title>
+</head>
+<body>
+
+    <h1>Admin Survey Responses</h1>
+
+    <table id="surveyResponsesTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Initial Impression</th>
+                <th>Satisfaction</th>
+                <th>Easy to Navigate</th>
+                <th>Feedback</th>
+                <th>Color Noticed First</th>
+                <th>Feature Located</th>
+                <th>Additional Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Survey responses will be inserted here dynamically -->
+        </tbody>
+
+    <script>
+        // Function to fetch survey responses from the server
+        async function fetchSurveyResponses() {
+            const response = await fetch('/api/survey-responses');
+            return response.json();
+        }
+
+        // Function to display survey responses in the table
+        async function displaySurveyResponses() {
+            const surveyResponses = await fetchSurveyResponses();
+            const tableBody = document.getElementById('surveyResponsesTable').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            surveyResponses.forEach(response => {
+                const row = tableBody.insertRow();
+                row.insertCell(0).textContent = response.date;
+                row.insertCell(1).textContent = response.textQuestion;
+                row.insertCell(2).textContent = response.question1;
+                row.insertCell(3).textContent = response.question2;
+                row.insertCell(4).textContent = response.options.join(', ');
+                row.insertCell(5).textContent = response.question4;
+                row.insertCell(6).textContent = response.featureLocate;
+                row.insertCell(7).textContent = response.comments;
+            });
+        }
+
+        // Display survey responses on page load
+        window.onload = function () {
+            displaySurveyResponses();
+        };
+    </script>
+
+</body>
+</html>

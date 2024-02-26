@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey</title>
+    <style>
+      .question {
+        font-weight: bold;
+      }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div>
+      <h1>Survey of Consumers of Walmart</h1>
+      <p><a href="resultsOfSurvey.html" target="_blank">For admin</a></p>
+      <p>What do you think of <a href="https://www.walmart.com/" target="_blank">this</a> website?</p>
+      <a href="https://www.walmart.com/" target="_blank"><img src="walmart.webp" alt="screenshotOfWalmartWebsite"></a>
+    </div>
+
+    <form action="/submit" method="POST">
+
+        <div>
+            <label for="textQuestion" class="question">What is your initial impression of the UI?</label>
+            <input type="text" id="textQuestion" name="textQuestion" required>
+        </div>
+
+        <hr>
+
+        <div>
+            <label class="question">How satisfied are you with this UI?</label>
+            <input type="radio" id="option1" name="question1" value="Very satisfied" required>
+            <label for="option1">Very satisfied</label>
+            
+            <input type="radio" id="option2" name="question1" value="Satisfied" required>
+            <label for="option2">Satisfied</label>
+            
+            <input type="radio" id="option3" name="question1" value="Neutral" required>
+            <label for="option3">Neutral</label>
+
+            <input type="radio" id="option4" name="question1" value="Dissatisfied" required>
+            <label for="option4">Dissatisfied</label>
+
+            <input type="radio" id="option5" name="question1" value="Very dissatisfied" required>
+            <label for="option5">Very dissatisfied</label>
+        </div>
+        
+        <hr>
+
+        <label for="question2" class="question">Do you find the UI to be easy to navigate?</label>
+        <select id="question2" name="question2" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        
+        <hr>
+
+        <div>
+            <label class="question">Which of the following is true?</label>
+            
+            <input type="checkbox" id="optionA" name="options[]" value="The UI is confusing to navigate">
+            <label for="optionA">The UI is confusing to navigate</label>
+            
+            <input type="checkbox" id="optionB" name="options[]" value="The UI takes too long to load">
+            <label for="optionB">The UI takes too long to load</label>
+            
+            <input type="checkbox" id="optionC" name="options[]" value="The UI is too bright">
+            <label for="optionC">The UI is too bright</label>
+            
+        </div>
+
+        <hr>
+
+        <div>
+            <label class="question">What colour did you notice first in the above image?</label>
+            <input type="radio" id="colorOption1" name="question4" value="White" required>
+            <label for="colorOption1">White</label>
+          
+            <input type="radio" id="colorOption2" name="question4" value="Blue" required>
+            <label for="colorOption2">Blue</label>
+          
+            <input type="radio" id="colorOption3" name="question4" value="Yellow" required>
+            <label for="colorOption3">Yellow</label>
+
+            <input type="radio" id="colorOption4" name="question4" value="Black" required>
+            <label for="colorOption4">Black</label>
+
+            <input type="radio" id="colorOption5" name="question4" value="Unsure" required>
+            <label for="colorOption5">Unsure</label>
+        </div>
+
+        <hr>
+
+        <div>
+            <label class="question">What feature was easiest to locate?</label>
+            <input type="radio" id="featureOption1" name="featureLocate" value="Search" required>
+            <label for="featureOption1">Search</label>
+          
+            <input type="radio" id="featureOption2" name="featureLocate" value="My Cart" required>
+            <label for="featureOption2">My Cart</label>
+          
+            <input type="radio" id="featureOption3" name="featureLocate" value="Sales" required>
+            <label for="featureOption3">Sales</label>
+
+            <input type="radio" id="featureOption4" name="featureLocate" value="Profile" required>
+            <label for="featureOption4">Profile</label>
+
+            <input type="radio" id="featureOption5" name="featureLocate" value="Unsure" required>
+            <label for="featureOption5">Unsure</label>
+        </div>
+
+        <hr>
+
+        <div>
+            <label class="question">Additional comments:</label>
+            <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+        </div>
+
+        <hr>
+
+        <div>
+            <input type="submit" value="Submit Questionnaire">
+        </div>
+          
+    </form>
+
+	    <footer>
+        <div class="footerDiv">
+          <p class="footerText1">Authors: Saad Mazhar (300249820), Oscar Law (300306180), and Justin Bushfield (300188318)</p>
+          <p class="footerText2">Created for SEG 3125 Lab 1</p>
+        </div>
+      </footer>
+	<script src="index.js"></script>
+  </body>
+</html>
